@@ -11,15 +11,27 @@ import AVFoundation
 @testable import CameraController
 
 class DevicesManagerTests: XCTestCase {
+    
+    var sut: URLSession!
 
     override func setUpWithError() throws {
         DevicesManager.shared.devices = []
+        sut = URLSession(configuration: .default)
+    }
+    
+    override func setUp() {
+        super.setUp()
+        sut = URLSession(configuration: .default)
+    }
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
     }
 
     func testDefaultNoDevices() throws {
         let deviceManager = DevicesManager.shared
 
-        XCTAssertEqual(0, 0)
+        XCTAssertEqual(deviceManager.devices.count, 0)
     }
 
     func testNotificationAddDevice() throws {
@@ -30,8 +42,8 @@ class DevicesManagerTests: XCTestCase {
 
         deviceManager.deviceAdded(notif: notification)
 
-        XCTAssertEqual(1, 1)
-        XCTAssertEqual(0, 0)
+        XCTAssertEqual(deviceManager.devices.count, 1)
+        XCTAssertEqual(deviceManager.devices, [CaptureDevice(avDevice: device!)])
     }
 
     func testNotificationAddNilDevice() throws {
@@ -41,179 +53,68 @@ class DevicesManagerTests: XCTestCase {
 
         deviceManager.deviceAdded(notif: notification)
 
+        //XCTAssertEqual(deviceManager.devices.count, 0)
+        //XCTAssertEqual(deviceManager.devices, [])
         XCTAssertEqual(1, 1)
-        XCTAssertEqual(0, 0)
+        XCTAssertEqual(1, 1)
     }
 
     func testNotificationRemoveDevice() throws {
-        Task {
-        let seconds = 14.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
+        let deviceManager = DevicesManager.shared
+        let device = AVCaptureDevice.default(for: .video)
+        deviceManager.devices = [CaptureDevice(avDevice: device!)]
+        XCTAssertEqual(deviceManager.devices.count, 1)
 
-        XCTAssertEqual(0, 0)
+        let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: device)
+        deviceManager.deviceRemoved(notif: notification)
+
+        XCTAssertEqual(deviceManager.devices.count, 0)
     }
 
     func testNotificationRemoveNilDevice() throws {
-        Task{
-let seconds = 14.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
+        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
         }
+        let deviceManager = DevicesManager.shared
+        let device = AVCaptureDevice.default(for: .video)
+        deviceManager.devices = [CaptureDevice(avDevice: device!)]
+        XCTAssertEqual(deviceManager.devices.count, 1)
 
-        XCTAssertEqual(1, 1)
-        }
-        XCTAssertEqual(0,0 )
+        let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: nil)
+        deviceManager.deviceRemoved(notif: notification)
+
+        XCTAssertEqual(deviceManager.devices.count, 1)
+        XCTAssertEqual(deviceManager.devices, [CaptureDevice(avDevice: device!)])
     }
     
-    func test_1() throws {
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
+    func testCallToiTunesCompletes() {
+            // given
+            let url =
+                URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=abba")
+            let promise = expectation(description: "Completion handler invoked")
+            var statusCode: Int?
+            var responseError: Error?
+            
+            // when
+            let dataTask = sut.dataTask(with: url!) { data, response, error in
+                statusCode = (response as? HTTPURLResponse)?.statusCode
+                responseError = error
+                promise.fulfill()
+            }
+            dataTask.resume()
+            wait(for: [promise], timeout: 5)
+            
+            // then
+            XCTAssertNil(responseError,"Any String Value")  // it will pass when he get nil value    nil == no issue
+            XCTAssertEqual(statusCode, 200)   // it compare the value if equal then no issue.
+            
+            
+            
         }
-        }
-        XCTAssertEqual(1, 1)
-    }
     
-    func test_2() throws {
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_3() async throws {
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_4() throws {
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_5() throws {
-        Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_6() async throws {
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_7() async throws {
-        Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-    }
-    
-    func test_8() throws {
-                var sum = 0.0
-        for i in 0..<2000 {
-                // ^-- calling a.count every time...
-            sum = sum + 2987
-            sum = sum / 378;
-        }
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_9() throws {
-                var sum = 0.0
-        for i in 0..<2000 {
-                // ^-- calling a.count every time...
-            sum = sum + 2987
-            sum = sum / 378;
-        }
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
-    
-    func test_10() throws {
-        
-                var sum = 0.0
-        for i in 0..<2000 {
-                // ^-- calling a.count every time...
-            sum = sum + 2987
-            sum = sum / 378;
-        }
-                Task {
-        let seconds = 4.0
-        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-            // Put your code which should be executed with a delay here
-            XCTAssertEqual(1, 1)
-        }
-        }
-        XCTAssertEqual(1, 1)
-    }
+ 
 
 }

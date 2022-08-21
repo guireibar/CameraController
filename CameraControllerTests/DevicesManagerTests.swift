@@ -76,6 +76,7 @@ let seconds = 14.0
 
         XCTAssertEqual(1, 1)
         }
+        sleep(5)
         XCTAssertEqual(0,0 )
     }
     
@@ -88,6 +89,7 @@ let seconds = 14.0
             XCTAssertEqual(1, 1)
         }
         }
+        sleep(5)
         XCTAssertEqual(1, 1)
     }
     

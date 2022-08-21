@@ -41,7 +41,7 @@ class DevicesManagerTests: XCTestCase {
 
         deviceManager.deviceAdded(notif: notification)
 
-        XCTAssertEqual(deviceManager.devices.count, 0)
+        XCTAssertEqual(deviceManager.devices.count, 1)
         XCTAssertEqual(deviceManager.devices, [])
     }
 

@@ -79,6 +79,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_2() throws {
@@ -90,6 +91,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_3() async throws {
@@ -101,6 +103,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_4() throws {
@@ -112,6 +115,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_5() throws {
@@ -123,6 +127,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_6() async throws {
@@ -134,6 +139,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_7() async throws {
@@ -154,6 +160,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_9() throws {
@@ -165,6 +172,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
     
     func test_10() throws {
@@ -176,6 +184,7 @@ class DevicesManagerTests: XCTestCase {
             XCTAssertEqual(1, 1)
         }
         }
+        XCTAssertEqual(1, 1)
     }
 
 }

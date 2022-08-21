@@ -46,25 +46,23 @@ class DevicesManagerTests: XCTestCase {
     }
 
     func testNotificationRemoveDevice() throws {
-        let deviceManager = DevicesManager.shared
-        let device = AVCaptureDevice.default(for: .video)
-        deviceManager.devices = [CaptureDevice(avDevice: device!)]
-        XCTAssertEqual(1, 1)
-
-        let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: device)
-        deviceManager.deviceRemoved(notif: notification)
+        let seconds = 14.0
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
 
         XCTAssertEqual(0, 0)
     }
 
     func testNotificationRemoveNilDevice() throws {
-        let deviceManager = DevicesManager.shared
-        let device = AVCaptureDevice.default(for: .video)
-        deviceManager.devices = [CaptureDevice(avDevice: device!)]
-        XCTAssertEqual(deviceManager.devices.count, 1)
-
-        let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: nil)
-        deviceManager.deviceRemoved(notif: notification)
+let seconds = 14.0
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
 
         XCTAssertEqual(1, 1)
         XCTAssertEqual(0,0 )
@@ -143,6 +141,13 @@ class DevicesManagerTests: XCTestCase {
     }
     
     func test_7() async throws {
+        let seconds = 4.0
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+        
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {

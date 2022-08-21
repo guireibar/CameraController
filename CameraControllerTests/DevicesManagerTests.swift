@@ -70,7 +70,7 @@ class DevicesManagerTests: XCTestCase {
         XCTAssertEqual(0,0 )
     }
     
-    func test_1() async throws {
+    func test_1() throws {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -79,7 +79,7 @@ class DevicesManagerTests: XCTestCase {
         }
     }
     
-    func test_2() async throws {
+    func test_2() throws {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -97,7 +97,7 @@ class DevicesManagerTests: XCTestCase {
         }
     }
     
-    func test_4() async throws {
+    func test_4() throws {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -132,7 +132,7 @@ class DevicesManagerTests: XCTestCase {
         }
     }
     
-    func test_8() async throws {
+    func test_8() throws {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -141,7 +141,7 @@ class DevicesManagerTests: XCTestCase {
         }
     }
     
-    func test_9() async throws {
+    func test_9() throws {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -150,7 +150,7 @@ class DevicesManagerTests: XCTestCase {
         }
     }
     
-    func test_10() async throws {
+    func test_10() throws {
         let seconds = 4.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here

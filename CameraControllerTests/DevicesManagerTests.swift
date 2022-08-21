@@ -35,6 +35,12 @@ class DevicesManagerTests: XCTestCase {
     }
 
     func testNotificationAddDevice() throws {
+                var sum = 0.0
+        for i in 0..<200000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
         let deviceManager = DevicesManager.shared
 
         let device = AVCaptureDevice.default(for: .video)
@@ -91,6 +97,12 @@ class DevicesManagerTests: XCTestCase {
     }
     
     func testCallToiTunesCompletes() {
+                var sum = 0.0
+        for i in 0..<200000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
             // given
             let url =
                 URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=abba")
@@ -116,6 +128,12 @@ class DevicesManagerTests: XCTestCase {
         }
     
         func testNotificationRemoveNilDevice1() throws {
+                    var sum = 0.0
+        for i in 0..<200000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
 
         let deviceManager = DevicesManager.shared
         let device = AVCaptureDevice.default(for: .video)

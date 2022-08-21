@@ -116,10 +116,7 @@ class DevicesManagerTests: XCTestCase {
         }
     
         func testNotificationRemoveNilDevice1() throws {
-        var sum = 0.0
-        for i in 0..<20 {
-                testCallToiTunesCompletes()
-        }
+
         let deviceManager = DevicesManager.shared
         let device = AVCaptureDevice.default(for: .video)
         deviceManager.devices = [CaptureDevice(avDevice: device!)]

@@ -148,7 +148,6 @@ let seconds = 14.0
             XCTAssertEqual(1, 1)
         }
         
-        let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here

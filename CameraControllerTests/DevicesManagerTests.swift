@@ -46,17 +46,20 @@ class DevicesManagerTests: XCTestCase {
     }
 
     func testNotificationRemoveDevice() throws {
+        Task {
         let seconds = 14.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
         }
+        }
 
         XCTAssertEqual(0, 0)
     }
 
     func testNotificationRemoveNilDevice() throws {
+        Task{
 let seconds = 14.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -65,6 +68,7 @@ let seconds = 14.0
         }
 
         XCTAssertEqual(1, 1)
+        }
         XCTAssertEqual(0,0 )
     }
     
@@ -141,6 +145,7 @@ let seconds = 14.0
     }
     
     func test_7() async throws {
+        Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
@@ -152,6 +157,7 @@ let seconds = 14.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     

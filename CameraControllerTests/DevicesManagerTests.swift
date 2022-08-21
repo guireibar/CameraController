@@ -69,5 +69,85 @@ class DevicesManagerTests: XCTestCase {
         XCTAssertEqual(deviceManager.devices.count, 1)
         XCTAssertEqual(deviceManager.devices, [CaptureDevice(avDevice: device!)])
     }
+    
+    func test_1() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_2() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_3() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_4() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_5() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_6() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_7() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_8() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_9() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
+    
+    func test_10() throws {
+        let seconds = 4.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            XCTAssertEqual(1, 1)
+        }
+    }
 
 }

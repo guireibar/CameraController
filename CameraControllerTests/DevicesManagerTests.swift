@@ -96,36 +96,6 @@ class DevicesManagerTests: XCTestCase {
         XCTAssertEqual(0,0)
     }
     
-    func testCallToiTunesCompletes() {
-                var sum = 0.0
-        for i in 0..<200000 {
-                // ^-- calling a.count every time...
-            sum = sum + 2987
-            sum = sum / 378;
-        }
-            // given
-            let url =
-                URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=abba")
-            let promise = expectation(description: "Completion handler invoked")
-            var statusCode: Int?
-            var responseError: Error?
-            
-            // when
-            let dataTask = sut.dataTask(with: url!) { data, response, error in
-                statusCode = (response as? HTTPURLResponse)?.statusCode
-                responseError = error
-                promise.fulfill()
-            }
-            dataTask.resume()
-            wait(for: [promise], timeout: 5)
-            
-            // then
-            XCTAssertNil(responseError,"Any String Value")  // it will pass when he get nil value    nil == no issue
-            XCTAssertEqual(statusCode, 200)   // it compare the value if equal then no issue.
-            
-            
-            
-        }
     
         func testNotificationRemoveNilDevice1() throws {
                     var sum = 0.0

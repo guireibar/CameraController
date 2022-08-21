@@ -71,55 +71,68 @@ class DevicesManagerTests: XCTestCase {
     }
     
     func test_1() throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
     func test_2() throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
     func test_3() async throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
     func test_4() throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
     func test_5() throws {
+        Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
         }
+        }
     }
     
     func test_6() async throws {
+                Task {
         let seconds = 4.0
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
@@ -133,28 +146,35 @@ class DevicesManagerTests: XCTestCase {
     }
     
     func test_8() throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
     
     func test_9() throws {
+                Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
         }
+        }
     }
     
     func test_10() throws {
+                Task {
         let seconds = 4.0
+        try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+        }
         }
     }
 

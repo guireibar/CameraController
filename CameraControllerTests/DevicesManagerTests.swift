@@ -58,6 +58,14 @@ class DevicesManagerTests: XCTestCase {
     }
 
     func testNotificationRemoveNilDevice() throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
         Task{
 let seconds = 14.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -84,6 +92,14 @@ let seconds = 14.0
     }
     
     func test_2() throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -96,6 +112,14 @@ let seconds = 14.0
     }
     
     func test_3() async throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -108,6 +132,14 @@ let seconds = 14.0
     }
     
     func test_4() throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -120,6 +152,14 @@ let seconds = 14.0
     }
     
     func test_5() throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
         Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -132,6 +172,14 @@ let seconds = 14.0
     }
     
     func test_6() async throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -144,6 +192,14 @@ let seconds = 14.0
     }
     
     func test_7() async throws {
+        
+                        var sum = 0.0
+        for i in 0..<20000 {
+                // ^-- calling a.count every time...
+            sum = sum + 2987
+            sum = sum / 378;
+        }
+        
         Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -162,7 +218,7 @@ let seconds = 14.0
     
     func test_8() throws {
                 var sum = 0.0
-        for i in 0..<2000 {
+        for i in 0..<20000 {
                 // ^-- calling a.count every time...
             sum = sum + 2987
             sum = sum / 378;
@@ -180,7 +236,7 @@ let seconds = 14.0
     
     func test_9() throws {
                 var sum = 0.0
-        for i in 0..<2000 {
+        for i in 0..<20000 {
                 // ^-- calling a.count every time...
             sum = sum + 2987
             sum = sum / 378;
@@ -199,7 +255,7 @@ let seconds = 14.0
     func test_10() throws {
         
                 var sum = 0.0
-        for i in 0..<2000 {
+        for i in 0..<20000 {
                 // ^-- calling a.count every time...
             sum = sum + 2987
             sum = sum / 378;

@@ -30,6 +30,7 @@ class DevicesManagerTests: XCTestCase {
         deviceManager.deviceAdded(notif: notification)
 
         XCTAssertEqual(1, 1)
+        sleep(5)
         XCTAssertEqual(0, 0)
     }
 
@@ -41,6 +42,7 @@ class DevicesManagerTests: XCTestCase {
         deviceManager.deviceAdded(notif: notification)
 
         XCTAssertEqual(1, 1)
+        sleep(5)
         XCTAssertEqual(0, 0)
     }
 
@@ -49,6 +51,7 @@ class DevicesManagerTests: XCTestCase {
         let seconds = 14.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    sleep(5)
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
         }
@@ -65,13 +68,14 @@ class DevicesManagerTests: XCTestCase {
             sum = sum + 2987
             sum = sum / 378;
         }
-        
+                sleep(5)
         Task{
 let seconds = 14.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+                    sleep(5)
         }
 
         XCTAssertEqual(1, 1)
@@ -87,6 +91,7 @@ let seconds = 14.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             XCTAssertEqual(1, 1)
+                    sleep(5)
         }
         }
         sleep(5)
@@ -121,7 +126,7 @@ let seconds = 14.0
             sum = sum + 2987
             sum = sum / 378;
         }
-        
+                sleep(5)
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -141,7 +146,7 @@ let seconds = 14.0
             sum = sum + 2987
             sum = sum / 378;
         }
-        
+                sleep(5)
                 Task {
         let seconds = 4.0
         try await Task.sleep(nanoseconds: UInt64(seconds * Double(NSEC_PER_SEC)))
@@ -171,6 +176,7 @@ let seconds = 14.0
         }
         }
         XCTAssertEqual(1, 1)
+                sleep(5)
     }
     
     func test_6() async throws {
